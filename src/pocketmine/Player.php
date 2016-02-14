@@ -3208,10 +3208,10 @@ class Player extends Human implements CommandSender, InventoryHolder, ChunkLoade
 			$this->namedtag["playerGameType"] = $this->gamemode;
 			$this->namedtag["lastPlayed"] = new LongTag("lastPlayed", floor(microtime(true) * 1000));
 
-			$this->namedtag["food"] = new Int("food", $this->getFood());
-			$this->namedtag["Health"] = new Short("Health", $this->getHealth());
-			$this->namedtag["exp"] = new Short("exp", $this->getExperience());
-			$this->namedtag["expLevel"] = new Short("expLevel", $this->getExpLevel());
+			$this->namedtag["food"] = new IntTag("food", $this->getFood());
+			$this->namedtag["Health"] = new ShortTag("Health", $this->getHealth());
+			$this->namedtag["exp"] = new ShortTag("exp", $this->getExperience());
+			$this->namedtag["expLevel"] = new ShortTag("expLevel", $this->getExpLevel());
 
 			if($this->username != "" and $this->namedtag instanceof CompoundTag){
 				$this->server->saveOfflinePlayerData($this->username, $this->namedtag, $async);
