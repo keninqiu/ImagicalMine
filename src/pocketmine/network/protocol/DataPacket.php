@@ -42,6 +42,7 @@ abstract class DataPacket extends BinaryStream{
 	const NETWORK_ID = 0;
 
 	public $isEncoded = false;
+	private $channel = 0;
 
 	public function pid(){
 		return $this::NETWORK_ID;
